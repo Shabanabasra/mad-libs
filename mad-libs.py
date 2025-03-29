@@ -26,8 +26,13 @@ adjective = st.text_input("Enter an adjective:")
 if st.button("Generate Story"):
     if name and place and animal and verb and adverb and adjective:
         selected_story = random.choice(stories).format(
-            name=name, place=place, animal=animal, verb=verb, adverb=adverb, adjective=adjective
-        )
+            name=name,
+            place=place,
+            animal=animal,
+            verb=verb,
+            adverb=adverb,
+            adjective=adjective
+        )  # ✅ Fixed: Removed incorrect indentation here
         st.subheader("🎉 Here is your Mad Lib story:")
         st.write(selected_story)
     else:
@@ -36,13 +41,3 @@ if st.button("Generate Story"):
 # Play again button
 if st.button("Play Again"):
     st.rerun()  # ✅ Fixed: Replaces the deprecated `st.experimental_rerun()`
-
-        )
-        st.subheader("🎉 Here is your Mad Lib story:")
-        st.write(selected_story)
-    else:
-        st.warning("⚠ Please fill in all the fields to generate a story.")
-
-# Play again button
-if st.button("Play Again"):
-    st.experimental_rerun()
