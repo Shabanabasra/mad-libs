@@ -35,4 +35,14 @@ if st.button("Generate Story"):
 
 # Play again button
 if st.button("Play Again"):
+    st.rerun()  # ✅ Fixed: Replaces the deprecated `st.experimental_rerun()`
+
+        )
+        st.subheader("🎉 Here is your Mad Lib story:")
+        st.write(selected_story)
+    else:
+        st.warning("⚠ Please fill in all the fields to generate a story.")
+
+# Play again button
+if st.button("Play Again"):
     st.experimental_rerun()
